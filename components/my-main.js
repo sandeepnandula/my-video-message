@@ -13,7 +13,7 @@
  */
 
 import {LitElement, html, css} from 'lit-element';
-
+import './my-video';
 /**
  * An example element.
  *
@@ -54,17 +54,24 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-      <h1>Hello, ${this.name}!</h1>
-      <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
-      </button>
+      <h1>Click 'StartRecording' button to record a message.</h1>
       <slot></slot>
+      <my-video></my-video>
+      <button @click=${this._onClickStartRecording} part="button">
+        StartRecording
+      </button>
+      <button @click=${this._onClickStopRecording} part="button">
+      StopRecording
+    </button>
     `;
   }
 
-  _onClick() {
-    this.count++;
+  _onClickStartRecording() {
+    console.log('Start recording')
+  }
+  _onClickStopRecording() {
+    console.log('Stop recording')
   }
 }
 
-window.customElements.define('my-element', MyElement);
+window.customElements.define('my-main', MyElement);
