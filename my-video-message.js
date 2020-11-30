@@ -13,7 +13,8 @@
  */
 
 import {LitElement, html, css} from 'lit-element';
-import './my-video';
+import './components/my-video';
+import './store'
 /**
  * An example element.
  *
@@ -74,4 +75,4 @@ export class MyElement extends LitElement {
   }
 }
 
-window.customElements.define('my-main', MyElement);
+window.customElements.define('my-video-message', MyElement);
